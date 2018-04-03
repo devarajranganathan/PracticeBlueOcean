@@ -22,10 +22,8 @@ pipeline {
             
           },
           "Exec_Env-Variable": {
-            dir(path: 'C:\\Devaraj\\Test\\') {
-              bat '${Module}'
-            }
-            
+            dir(path: 'C:\\Devaraj\\Test\\')
+            echo '"${Module}"'
             
           }
         )
