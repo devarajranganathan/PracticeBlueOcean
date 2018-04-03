@@ -23,7 +23,7 @@ pipeline {
           },
           "Exec_Env-Variable": {
             dir(path: 'C:\\Devaraj\\Test\\') {
-              bat 'check'
+              bat '${Module}'
             }
             
             
