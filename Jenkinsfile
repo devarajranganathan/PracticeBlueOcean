@@ -21,9 +21,9 @@ pipeline {
             bat(script: 'WScript "C:\\Devaraj\\Test\\c.vbs"', returnStatus: true, returnStdout: true)
             
           },
-          "Exec_Env-Variable": {
+          "Run_Another Pipeline": {
             dir(path: 'C:\\Devaraj\\Test\\')
-            echo '"${Module}"'
+            build 'Pipeline/PipelineBO_FullStages'
             
           }
         )
