@@ -22,7 +22,6 @@ pipeline {
             
           },
           "Run_Another Pipeline": {
-            dir(path: 'C:\\Devaraj\\Test\\')
             build 'Pipeline/PipelineBO_FullStages'
             
           }
