@@ -1,5 +1,10 @@
 pipeline {
-  agent any
+  agent {
+    node {
+      label 'master'
+    }
+    
+  }
   stages {
     stage('RunVBS_A') {
       steps {
@@ -14,6 +19,13 @@ pipeline {
           },
           "RunVBS_C": {
             bat(script: 'WScript "C:\\Devaraj\\Test\\c.vbs"', returnStatus: true, returnStdout: true)
+            
+          },
+          "Exec_Env-Variable": {
+            dir(path: 'C:\\Devaraj\\Test\\') {
+              bat 'check'
+            }
+            
             
           }
         )
@@ -33,5 +45,8 @@ pipeline {
         )
       }
     }
+  }
+  environment {
+    Module = 'a.vbs'
   }
 }
